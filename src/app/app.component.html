@@ -1,0 +1,73 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="navbar-header" >
+        <div class="nav-item active" class="navbar-brand" >
+            <div> <h1>Sonata</h1> </div>
+        </div>
+    </div>
+</nav>
+<div>
+  <ngb-tabset [destroyOnHide]="false" #t="ngbTabset" activeId="{{tabId}}">
+    
+    <ngb-tab title="Client Details" id="1">
+      <ng-template ngbTabContent>
+        <p>This is Client Details Component</p>
+        <!-- <button class="btn btn-primary" (click)="nextTab('2')">Search</button> -->
+      </ng-template>
+      
+    </ngb-tab>
+     
+    <ngb-tab id="2">
+      <ng-template ngbTabTitle>Account</ng-template>
+      <ng-template ngbTabContent>
+          <p>This is Account Component</p>
+      </ng-template>
+      
+    </ngb-tab>
+     
+    <ngb-tab id="3">
+      <ng-template ngbTabTitle>Transfer</ng-template>
+      <ng-template ngbTabContent>
+          <p>This is Transfer Component</p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="4">
+      <ng-template ngbTabTitle>Contributions</ng-template>
+      <ng-template ngbTabContent>
+          <app-contributions [nextTab]="5" [prevTab]="3" (tabId)="change($event)"></app-contributions>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="5">
+      <ng-template ngbTabTitle>Asset Selection</ng-template>
+      <ng-template ngbTabContent >
+        <app-asset-selection [nextTab]="6" [prevTab]="4" (tabId)="change($event)"></app-asset-selection>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="6">
+      <ng-template ngbTabTitle>Income and Withdrawals</ng-template>
+      <ng-template ngbTabContent>
+          <app-income [nextTab]="7" [prevTab]="5" (tabId)="change($event)"></app-income>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="7">
+      <ng-template ngbTabTitle>Additional Information</ng-template>
+      <ng-template ngbTabContent>
+          <p>This is Additional Information Component</p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="8">
+      <ng-template ngbTabTitle>Confirm</ng-template>
+      <ng-template ngbTabContent>
+          <p>This is Confirm Component</p>
+      </ng-template>
+    </ngb-tab>
+    
+     
+  </ngb-tabset>
+  </div>
+  
+  <!-- <br>
+<div class="container-fluid">
+  <app-asset-selection></app-asset-selection>
+</div> -->
+   

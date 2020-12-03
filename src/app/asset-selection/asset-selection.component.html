@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div>
+    <h1 class="text-danger p1 font-weight-bold">Illustration for Angela TestWeb</h1>
+</div>
+<br><br>
+<div>
+    <h3 class="text-danger font-weight-bold p2">Asset Selection</h3>
+
+    <div class="row">
+        <div class="col-md-5"> 
+            <div class="form-inline">
+                <input type="text" class="form-control" placeholder="Search" name="search" 
+                                 id="searchitem" #search> &nbsp;
+                <button class="btn btn-primary" (click)="getAsset(search.value)">Search</button>
+            </div>
+        </div>
+        <div class="col-md-1 offset-5">
+            <button class="btn btn-primary" (click)="back()">Back</button>
+        </div>
+        <div class="col-md-1"> 
+            <button class="btn btn-primary" (click)="next()">Next</button> 
+        </div>
+       </div>       
+    <div>
+        
+    <br>
+        <div *ngIf="asset!=null">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Asset Id</th>
+                    <th>Name</th>
+                    <th>Gross Value</th>
+                    <th>Net Value</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody class="table-secondary">
+                  <tr>
+                    <td> {{asset.assetId}} </td>
+                    <td>{{asset.name}}</td>
+                    <td>{{asset.grossValue}}</td>
+                    <td>{{asset.netValue}}</td>
+                    <td>{{asset.time}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+</div>
